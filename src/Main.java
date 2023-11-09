@@ -1,17 +1,45 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.*;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Start the FunctionManager (server) in a separate thread
+        new Thread(() -> FunctionManager.main(null)).start();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        try {
+            // Sleep for a moment to ensure the server is ready
+            Thread.sleep(10000);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            // Create a FunctionCalculator (client) for function f with x = 5
+            Thread fThread = new Thread(() -> {
+                FunctionCalculator functionF = new FunctionCalculator("f", 5);
+                functionF.run();
+            });
+
+            // Create a FunctionCalculator (client) for function g with x = 10
+            Thread gThread = new Thread(() -> {
+                FunctionCalculator functionG = new FunctionCalculator("g", 10);
+                functionG.run();
+            });
+
+            // Start the threads for function f and function g
+            fThread.start();
+            gThread.start();
+
+            // Wait for both threads to finish
+            fThread.join();
+            gThread.join();
+
+            // Get the result and print it
+            String result = FunctionCalculator.getResult();
+            System.out.println("Expression Result: " + result);
+            if ("відмова".equals(result)) {
+                System.out.println("Reason: Too many non-critical failures.");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
