@@ -1,6 +1,8 @@
 import java.io.*;
+import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
+import java.util.Scanner;
+import java.util.concurrent.*;
 class FunctionCalculator implements Runnable {
     private String functionName;
     private Integer x;
@@ -9,6 +11,7 @@ class FunctionCalculator implements Runnable {
     private static final int MAX_FAILURES = 3; // Максимальна кількість некритичних збоїв
     private static double resultF = Double.NaN;
     private static double resultG = Double.NaN;
+    private static final Object lock = new Object();
 
     public FunctionCalculator(String functionName, Integer x) {
         this.functionName = functionName;
@@ -65,11 +68,13 @@ class FunctionCalculator implements Runnable {
         }
     }
 
-    private synchronized void saveResult(String functionName, double result) {
-        if ("f".equals(functionName)) {
-            resultF = result;
-        } else if ("g".equals(functionName)) {
-            resultG = result;
+    private void saveResult(String functionName, double result) {
+        synchronized (lock) {
+            if ("f".equals(functionName)) {
+                resultF = result;
+            } else if ("g".equals(functionName)) {
+                resultG = result;
+            }
         }
     }
 
@@ -87,13 +92,15 @@ class FunctionCalculator implements Runnable {
         }
     }
 
-    public static synchronized String getResult() {
-        if (Double.isNaN(resultF) || Double.isNaN(resultG)) {
-            return "відмова";
-        } else {
-            double sum = resultF + resultG;
-            return "Сума результатів f та g: " + sum;
+    public static String getResult() {
+        synchronized (lock) {
+            if (Double.isNaN(resultF) || Double.isNaN(resultG)) {
+                return "відмова";
+            } else {
+                double sum = resultF + resultG;
+                return "Сума результатів f та g: " + sum;
+            }
         }
     }
-}
 
+}

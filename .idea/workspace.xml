@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a9cb08-d433-40bb-9671-3e1adbb2dd11" name="Changes" comment="">
+    <list default="true" id="10a9cb08-d433-40bb-9671-3e1adbb2dd11" name="Changes" comment="non-critical failures./critical">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FunctionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FunctionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionManager.java" afterDir="false" />
@@ -58,11 +58,35 @@
       <option name="presentableId" value="Default" />
       <updated>1699542779031</updated>
       <workItem from="1699542780045" duration="504000" />
-      <workItem from="1699543346443" duration="3977000" />
+      <workItem from="1699543346443" duration="4808000" />
     </task>
+    <task id="LOCAL-00001" summary="non-critical failures./critical">
+      <option name="closed" value="true" />
+      <created>1699547558000</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699547558000</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="non-critical failures./critical" />
+    <option name="LAST_COMMIT_MESSAGE" value="non-critical failures./critical" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/FunctionCalculator.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

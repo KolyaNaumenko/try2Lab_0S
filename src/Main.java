@@ -1,8 +1,9 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 import java.util.concurrent.*;
-
+import java.util.InputMismatchException;
 public class Main {
     public static void main(String[] args) {
         // Start the FunctionManager (server) in a separate thread
@@ -12,15 +13,20 @@ public class Main {
             // Sleep for a moment to ensure the server is ready
             Thread.sleep(10000);
 
-            // Create a FunctionCalculator (client) for function f with x = 5
+            // Input x value from the user via console
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter the value for x: ");
+            int x = scanner.nextInt();
+
+            // Create a FunctionCalculator (client) for function f with user-input x value
             Thread fThread = new Thread(() -> {
-                FunctionCalculator functionF = new FunctionCalculator("f", 5);
+                FunctionCalculator functionF = new FunctionCalculator("f", x);
                 functionF.run();
             });
 
-            // Create a FunctionCalculator (client) for function g with x = 10
+            // Create a FunctionCalculator (client) for function g with user-input x value
             Thread gThread = new Thread(() -> {
-                FunctionCalculator functionG = new FunctionCalculator("g", 10);
+                FunctionCalculator functionG = new FunctionCalculator("g", x);
                 functionG.run();
             });
 
@@ -38,7 +44,7 @@ public class Main {
             if ("відмова".equals(result)) {
                 System.out.println("Reason: Too many non-critical failures.");
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException | InputMismatchException e) {
             e.printStackTrace();
         }
     }
