@@ -76,9 +76,9 @@ class FunctionManager {
         // Implement your actual calculation logic here
         double doubleX = x.doubleValue(); // Convert Integer to double
         if ("f".equals(functionName)) {
-            return doubleX * doubleX;
+            return doubleX * doubleX;//                                       x^2
         } else if ("g".equals(functionName)) {
-            return 3 * doubleX - 5;
+            return 3 * doubleX - 5;//                                            3x-5
         } else {
             return Double.NaN; // Placeholder for unsupported function
         }

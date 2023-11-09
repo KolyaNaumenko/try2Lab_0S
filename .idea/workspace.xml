@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10a9cb08-d433-40bb-9671-3e1adbb2dd11" name="Changes" comment="non-critical failures./critical">
+    <list default="true" id="10a9cb08-d433-40bb-9671-3e1adbb2dd11" name="Changes" comment="rabotaet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FunctionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FunctionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SocketServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +23,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "KolyaNaumenko"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d7580205-53d8-4f73-8551-def277ce066d" />
+        <option name="url" value="https://github.com/KolyaNaumenko/try2Lab_0S.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -58,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699542779031</updated>
       <workItem from="1699542780045" duration="504000" />
-      <workItem from="1699543346443" duration="4808000" />
+      <workItem from="1699543346443" duration="5646000" />
     </task>
     <task id="LOCAL-00001" summary="non-critical failures./critical">
       <option name="closed" value="true" />
@@ -68,7 +80,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699547558000</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rabotaet">
+      <option name="closed" value="true" />
+      <created>1699548593500</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699548593500</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,7 +96,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="non-critical failures./critical" />
-    <option name="LAST_COMMIT_MESSAGE" value="non-critical failures./critical" />
+    <MESSAGE value="rabotaet" />
+    <option name="LAST_COMMIT_MESSAGE" value="rabotaet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
